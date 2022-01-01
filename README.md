@@ -1,6 +1,6 @@
 # IP_4_XfcePanel (V2.1)
 
-![preview](https://github.com/Valzuun/IP4_4_XfcePanel/raw/V2.0/Images/IP4_4_XfcePanel.png)
+![preview](https://github.com/Valzuun/IP_4_XfcePanels/blob/master/IP4_4_XfcePanel.png)
 
 Simple script to show your local / global IP in the Xfce Panel
 also usefull to show your IP only or use as parameter 
