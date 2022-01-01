@@ -1,14 +1,15 @@
 #!/bin/bash
-# IP4_4_XfcePanel V2.0
+# IP4_4_XfcePanel V2.1
 # written by Sebastian Giese 2021-2022
 
 #Paramaeters:
 # :adapter
-# -l5: show local IP4
-# -l7: show local IP6
+# -l4: show local IP4
+# -l6: show local IP6
 # -g4: show global IP4
 # -g6: show global IP6
 # -hd: hide description
+# -pure: no <> surround IP
 # -help: show help
 
 # check (and set) networkadapter parameter (not needed for global IP)
@@ -36,6 +37,7 @@ l6=0
 g4=0
 g6=0
 hd=0
+pure=0
 
 while [ $# -gt 0 ]
 do 
@@ -66,6 +68,9 @@ do
     elif [ $1 == '-hd' ]
     then
         hd=1
+    elif [ $1 == '-pure' ]
+    then
+        pure=1
     elif [ $1 == '-help' ]
     then
         echo -e "\nIP_4_XfcePanel - HELP"
@@ -75,6 +80,7 @@ do
         echo "-g4: show global IP (IP4 format)"
         echo "-g6: show global IP (IP6 format)"
         echo "-hd: hide description"
+        echo "-pure: no <> surround IP"
         echo "-help: show this help"
         exit 1
     else
@@ -96,7 +102,12 @@ then
     then
         output="LocalIP: "
     fi
+    if [ $pure = 0 ]
+    then
         output=$output"<"$l4"> "
+    else
+        output=$output$l4
+    fi
 fi
 
 if [ $l6 != "0" ]
@@ -105,7 +116,12 @@ then
     then
         output=$output"LocalIP: "
     fi
+    if [ $pure = 0 ]
+    then
         output=$output"<"$l6"> "
+    else
+        output=$output$l6
+    fi
 fi
 
 if [ $g4 != "0" ]
@@ -114,7 +130,12 @@ then
     then
         output=$output"GlobalIP: "
     fi
+    if [ $pure = 0 ]
+    then
         output=$output"<"$g4"> "
+    else
+        output=$output$g4
+    fi
 fi
 
 if [ $g6 != "0" ]
@@ -127,7 +148,12 @@ then
     then
         output=$output"Global IP6 is not supported - check config or ask your provider for further information"
     else
-        output=$output"<"$g6"> "
+        if [ $pure = 0 ]
+        then
+            output=$output"<"$g6"> "
+        else
+            output=$output$g6
+        fi
     fi
 fi
 

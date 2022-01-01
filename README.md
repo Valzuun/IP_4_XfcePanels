@@ -1,4 +1,4 @@
-# IP_4_XfcePanel
+# IP_4_XfcePanel (V2.1)
 
 ![preview](https://github.com/Valzuun/IP4_4_XfcePanel/raw/V2.0/Images/IP4_4_XfcePanel.png)
 
@@ -30,4 +30,5 @@ Parameters:
 -g4: show global IP (IP4 format)  
 -g6: show global IP (IP6 format)  
 -hd: hide description  
+-pure: no <> surrounding IP  
 -help: show help  
