@@ -4,10 +4,12 @@
 
 Simple script to show your local / global IP in the Xfce Panel
 also usefull to show your IP only or use as parameter 
-
+  
+General instructions:  
 Download IP_4_XfcePanel.sh  
 make it executable (chmod +x)  
-optional:  
+  
+To use in XfcePanel:  
 &emsp;- create a folder of your choice  
 &emsp;&emsp;- suggest: sudo mkdir /etc/ip4panel  
 &emsp;- move the file to new folder (i.e. sudo mv IP_4_XfcePanel.sh /etc/ip4panel  
